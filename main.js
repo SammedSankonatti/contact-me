@@ -1,16 +1,16 @@
-// Initialize Firebase (ADD YOUR OWN DATA)
-// const firebaseConfig = {
-//   apiKey: "AIzaSyBqjicDEKN6uaZ6722Osdl92o6uwXIozd8",
-//   authDomain: "contact-form-fa728.firebaseapp.com",
-//   databaseURL: "https://contact-form-fa728-default-rtdb.firebaseio.com",
-//   projectId: "contact-form-fa728",
-//   storageBucket: "contact-form-fa728.appspot.com",
-//   messagingSenderId: "82183493528",
-//   appId: "1:82183493528:web:68dd9cef6a97f969a37ded",
-//   measurementId: "G-8RBF9DQXWT"
-// };
-// firebase.initializeApp(config);
+var firebaseConfig = {
+    apiKey: "AIzaSyBQ33WrUDK2RNlFPIiEMdBj0q2GnUVMDzo",
+    authDomain: "contact-form-fa626.firebaseapp.com",
+    databaseURL: "https://contact-form-fa626-default-rtdb.firebaseio.com",
+    projectId: "contact-form-fa626",
+    storageBucket: "contact-form-fa626.appspot.com",
+    messagingSenderId: "1033180164534",
+    appId: "1:1033180164534:web:4ff11f768b78f0d9905117"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
 
+  
 // Reference messages collection
 var messagesRef = firebase.database().ref('messages');
 
