@@ -1,62 +1,63 @@
-var firebaseConfig = {
-    apiKey: "AIzaSyBQ33WrUDK2RNlFPIiEMdBj0q2GnUVMDzo",
-    authDomain: "contact-form-fa626.firebaseapp.com",
-    projectId: "contact-form-fa626",
-    storageBucket: "contact-form-fa626.appspot.com",
-    messagingSenderId: "1033180164534",
-    appId: "1:1033180164534:web:4ff11f768b78f0d9905117"
-  };
+// Initialize Firebase (ADD YOUR OWN DATA)
+// const firebaseConfig = {
+//   apiKey: "AIzaSyBqjicDEKN6uaZ6722Osdl92o6uwXIozd8",
+//   authDomain: "contact-form-fa728.firebaseapp.com",
+//   databaseURL: "https://contact-form-fa728-default-rtdb.firebaseio.com",
+//   projectId: "contact-form-fa728",
+//   storageBucket: "contact-form-fa728.appspot.com",
+//   messagingSenderId: "82183493528",
+//   appId: "1:82183493528:web:68dd9cef6a97f969a37ded",
+//   measurementId: "G-8RBF9DQXWT"
+// };
+// firebase.initializeApp(config);
 
+// Reference messages collection
+var messagesRef = firebase.database().ref('messages');
 
-  //collections of messages
-  var msgref= firebase.database().ref('messages');
-
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-
-//event listener
+// Listen for form submit
 document.getElementById('contactForm').addEventListener('submit', submitForm);
 
-//submit form
+
+// Submit form
 function submitForm(e){
-    e.preventDefault();
-    // console.log("worked");
+  e.preventDefault();
 
-    var name=getInputvalues('name');
-    var company=getInputvalues('company');
-    var email=getInputvalues('email');
-    var phone=getInputvalues('phone');
-    var message=getInputvalues('message');
-    
-    //save message
-    saveMessages(name,company,email,phone,message);
 
-    //show alert
-    document.querySelector('.alert').style.display='block';
+  // Get values
+  var name = getInputVal('name');
+  var company = getInputVal('company');
+  var email = getInputVal('email');
+  var phone = getInputVal('phone');
+  var message = getInputVal('message');
 
-    //hide alert after few sec
-    setTimeout(function(){
-        document.querySelector('.alert').style.display='none';
-    },3000);
+  // Save message
+  saveMessage(name, company, email, phone, message);
 
-    //clear form
-    document.getElementById('contactForm').reset();
+  // Show alert
+  document.querySelector('.alert').style.display = 'block';
+
+  // Hide alert after 3 seconds
+  setTimeout(function(){
+    document.querySelector('.alert').style.display = 'none';
+  },3000);
+
+  // Clear form
+  document.getElementById('contactForm').reset();
 }
 
-//function to get form values
-function getInputvalues(id){
-    return document.getElementById(id).value;
+// Function to get get form values
+function getInputVal(id){
+  return document.getElementById(id).value;
 }
 
-//save messages to firebase
-
-function saveMessages(name,company,email,phone,message){
-    var newMessageRef =msgref.push();
-    newMessageRef.set({
-        name:name,
-        company:company,
-        email:email,
-        phone:phone,
-        message:message
-    })
+// Save message to firebase
+function saveMessage(name, company, email, phone, message){
+  var newMessageRef = messagesRef.push();
+  newMessageRef.set({
+    name: name,
+    company:company,
+    email:email,
+    phone:phone,
+    message:message
+  });
 }
