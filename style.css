@@ -70,12 +70,12 @@ ul{
 .contact form button, .contact form input, .contact form textarea{
   width:100%;
   padding:1em;
-  border:1px solid #1c4a82;
+  border:1px solid #072917;
   outline: none;
 }
 
 .contact form button{
-  background:#0f7656;
+  background:#2d7322;
   border:0;
   text-transform: uppercase;
 }
