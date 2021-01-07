@@ -2,4 +2,5 @@
 
 <img src="./images/contact-1.png" alt="image-1" />
 <img src="./images/contact-2.png" alt="image-1" />
-
+<img src="./images/contact-3.png" alt="image-1" />
+<img src="./images/contact-4.png" alt="image-1" />
