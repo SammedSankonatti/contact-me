@@ -87,6 +87,18 @@ ul{
   transition: background-color 2s ease-out;
 }
 
+.alert{
+  text-align: center;
+  padding: 10px;
+  background-color: rgb(21, 124, 54);
+  color: #fff;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  display: none;
+}
+
+
+
 /* FOR LARGER SCREENS */
 @media(min-width:700px){
   .wrapper{
